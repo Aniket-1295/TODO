@@ -1,13 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './Components/HomePage';
+import AddTaskPage from './Components/AddTaskPage';
+import EditTaskPage from './Components/EditTaskPage';
 function App() {
   return (
-    <div className="App">
-      <h1>TO Do App</h1>
-      
 
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/add-task" element={<AddTaskPage />} />
+        <Route path="/edit-task/:id" element={<EditTaskPage />} />
+      </Routes>
+    </Router>
+    
+    
   );
 }
 
